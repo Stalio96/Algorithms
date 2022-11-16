@@ -9,7 +9,7 @@ function findPath(lab, row, col, direction) {
         || lab[row][col] == '*') {
         return;
     }
-
+    
     path.push(direction);
 
     if (lab[row][col] == 'e') {
@@ -26,6 +26,7 @@ function findPath(lab, row, col, direction) {
     findPath(lab, row, col + 1, 'R');
     
     lab[row][col] = '-';
+    path.pop();
 }
 
 function printPath(path) {
@@ -42,3 +43,9 @@ pathsInLabyrinth([
     ['-','-','-','-','-'],
     ['*','*','*','*','*']
 ]);
+
+// pathsInLabyrinth([
+//     ['-','-','-'],
+//     ['-','*','-'],
+//     ['-','-','e']
+// ]);
